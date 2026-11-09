@@ -29,27 +29,27 @@ html{scroll-padding-top:env(safe-area-inset-top,0px)}
 header{display:flex;justify-content:space-between;align-items:center;padding:10px 16px 22px}
 header h1{font-size:24px;font-weight:800;white-space:nowrap;margin:0;color:#3ddc84;letter-spacing:.03em}
 #clear{background:var(--key);color:var(--text);border:1px solid var(--line);border-radius:8px;
-  padding:6px 12px;font-size:13px}
-main{flex:1;display:flex;flex-direction:column;gap:10px;padding:0 14px 10px;min-height:0;overflow-y:auto}
-.col{display:flex;flex-direction:column;border:2px solid var(--line);border-radius:14px;padding:8px 10px 12px}
+  padding:8px 14px;font-size:16px}
+main{flex:1;display:flex;flex-direction:column;gap:10px;padding:0 10px 10px;min-height:0;overflow-y:auto}
+.col{display:flex;flex-direction:column;border:2px solid var(--line);border-radius:14px;padding:8px 8px 10px}
 .col.fuel{flex:none}
 .col.dens{flex:none}
-h2{font-size:15px;font-weight:600;margin:4px 0 8px;color:var(--text)}
+h2{font-size:19px;font-weight:600;margin:4px 0 8px;color:var(--text)}
 .row{display:flex;align-items:center;gap:8px;margin-bottom:8px}
-.lab{width:84px;font-size:15px;font-weight:600;flex:none;white-space:nowrap}
-.box{flex:0 1 136px;min-width:0;height:42px;border:2px solid #fff;border-radius:6px;background:var(--panel);
-  display:flex;align-items:center;justify-content:flex-end;padding:0 8px;font-size:19px;
+.lab{width:88px;font-size:18px;font-weight:600;flex:none;white-space:nowrap}
+.box{flex:0 1 140px;min-width:0;height:48px;border:2px solid #fff;border-radius:6px;background:var(--panel);
+  display:flex;align-items:center;justify-content:flex-end;padding:0 8px;font-size:23px;
   font-variant-numeric:tabular-nums;overflow:hidden;white-space:nowrap}
 .box.active{border-color:var(--accent);box-shadow:0 0 0 2px rgba(77,163,255,.25)}
 .box.active.typing::after{content:"";width:2px;height:24px;background:var(--accent);margin-left:2px;animation:blink 1s steps(1) infinite}
 .box.calc{color:var(--text)}
 @keyframes blink{50%{opacity:0}}
-.mx{font-size:15px;font-weight:600;color:#fff;flex:none;width:94px;white-space:nowrap}
+.mx{font-size:18px;font-weight:600;color:#fff;flex:none;width:100px;white-space:nowrap}
 .pad{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:10px 14px;
   padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));background:#0a0c0f;border-top:1px solid #20252c}
-.pad button{height:54px;font-size:24px;border:0;border-radius:12px;background:var(--key);color:var(--text)}
+.pad button{height:56px;font-size:30px;border:0;border-radius:12px;background:var(--key);color:var(--text)}
 .pad button:active{background:var(--key2)}
-.pad .fn{background:#262c34;font-size:20px}
+.pad .fn{background:#262c34;font-size:26px}
 </style>
 </head>
 <body>
@@ -132,7 +132,7 @@ document.querySelectorAll('.box').forEach(el=>{
   el.addEventListener('click',()=>{ st.active = el.id; st.fresh = true; render(); });
 });
 const pad = document.getElementById('pad');
-['7','8','9','4','5','6','1','2','3','.','0','⌫'].forEach(k=>{
+['1','2','3','4','5','6','7','8','9','.','0','⌫'].forEach(k=>{
   const b = document.createElement('button');
   b.textContent = k;
   if (k === '⌫' || k === '.') b.className = 'fn';
